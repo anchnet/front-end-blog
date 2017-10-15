@@ -117,6 +117,18 @@
             </span>
           {% endif %}
 
+          <!-- add by xiaoda -->
+          {% if post.author %}
+            <span class="post-author">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-user-o"></i>
+              </span>
+              <span class="post-meta-item-text">作者 </span>
+              <span>{{ post.author }}</span>
+            </span>
+          {% endif %}
+
           {% if post.comments %}
             {% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %}
               <span class="post-comments-count">

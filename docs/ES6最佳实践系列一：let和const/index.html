@@ -94,13 +94,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="安畅前端博客">
-<meta property="og:url" content="http://frontend.anchnet.com/index.html">
+<meta name="description" content="ES6 在 2015 年正式发布，2016 年在 babel 的支持下迅速成为前端开发的主流。ES6 使 javascript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，一时半会儿看不完，所以我选择了边开发边学习的方式一点一点地学习了 ES6 的大部分主要特性，应用到项目里并且直观地体会到它的好处。所以我想开这个“ES6最佳实践”系列说说 ES6 究竟如何改变了我们的代码。gogo!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6最佳实践系列一：let和const">
+<meta property="og:url" content="http://frontend.anchnet.com/ES6最佳实践系列一：let和const/index.html">
 <meta property="og:site_name" content="安畅前端博客">
+<meta property="og:description" content="ES6 在 2015 年正式发布，2016 年在 babel 的支持下迅速成为前端开发的主流。ES6 使 javascript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，一时半会儿看不完，所以我选择了边开发边学习的方式一点一点地学习了 ES6 的大部分主要特性，应用到项目里并且直观地体会到它的好处。所以我想开这个“ES6最佳实践”系列说说 ES6 究竟如何改变了我们的代码。gogo!">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-15T15:02:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安畅前端博客">
+<meta name="twitter:title" content="ES6最佳实践系列一：let和const">
+<meta name="twitter:description" content="ES6 在 2015 年正式发布，2016 年在 babel 的支持下迅速成为前端开发的主流。ES6 使 javascript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，一时半会儿看不完，所以我选择了边开发边学习的方式一点一点地学习了 ES6 的大部分主要特性，应用到项目里并且直观地体会到它的好处。所以我想开这个“ES6最佳实践”系列说说 ES6 究竟如何改变了我们的代码。gogo!">
 
 
 
@@ -129,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://frontend.anchnet.com/"/>
+  <link rel="canonical" href="http://frontend.anchnet.com/ES6最佳实践系列一：let和const/"/>
 
 
 
 
 
-  <title>安畅前端博客</title>
+  <title>ES6最佳实践系列一：let和const | 安畅前端博客</title>
   
 
 
@@ -154,9 +158,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -239,9 +241,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -271,9 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/ES6最佳实践系列一：let和const/" itemprop="url">ES6最佳实践系列一：let和const</a></h1>
+          <h1 class="post-title" itemprop="name headline">ES6最佳实践系列一：let和const</h1>
         
 
         <div class="post-meta">
@@ -335,9 +335,7 @@
       
 
       
-        
-          
-            <p>ES6 在 2015 年正式发布，2016 年在 babel 的支持下迅速成为前端开发的主流。ES6 使 javascript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，一时半会儿看不完，所以我选择了边开发边学习的方式一点一点地学习了 ES6 的大部分主要特性，应用到项目里并且直观地体会到它的好处。所以我想开这个“ES6最佳实践”系列说说 ES6 究竟如何改变了我们的代码。gogo!</p>
+        <p>ES6 在 2015 年正式发布，2016 年在 babel 的支持下迅速成为前端开发的主流。ES6 使 javascript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，一时半会儿看不完，所以我选择了边开发边学习的方式一点一点地学习了 ES6 的大部分主要特性，应用到项目里并且直观地体会到它的好处。所以我想开这个“ES6最佳实践”系列说说 ES6 究竟如何改变了我们的代码。gogo!</p>
 <p>let 用来声明变量，类似于 var。不同的是，let 声明的变量只在代码块内（一对大括号）有效。这样便有效解决了变量作用域的问题。</p>
 <p><strong>过去：</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> itemANum = <span class="number">10</span></div><div class="line">... <span class="comment">// itemA 的处理逻辑</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> itemBNum = <span class="number">50</span></div><div class="line">... <span class="comment">// itemB 的处理逻辑</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> itemCNum = <span class="number">100</span></div><div class="line">... <span class="comment">// itemC 的处理逻辑</span></div></pre></td></tr></table></figure>
@@ -356,8 +354,6 @@
 <p>经典案例，完美解决了延时执行代码中的变量覆盖问题。</p>
 <p>const 用来声明常量。一旦声明，它的值就无法更改。这样避免了全局的、通用的变量在使用中被意外更改、覆盖的情况。</p>
 
-          
-        
       
     </div>
     
@@ -374,12 +370,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -389,10 +385,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -400,6 +397,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -593,10 +594,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
