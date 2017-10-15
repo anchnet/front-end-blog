@@ -124,7 +124,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-user-o"></i>
               </span>
-              <span class="post-meta-item-text">作者 </span>
+              <span class="post-meta-item-text">{{ __('post.author') }} </span>
               <span>{{ post.author }}</span>
             </span>
           {% endif %}
