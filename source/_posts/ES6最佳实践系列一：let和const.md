@@ -46,7 +46,7 @@ var itemCNum = 100
 ``` js
 !function () {
     var item = 'A'
-}
+}()
 ```
 
 **现在：**
