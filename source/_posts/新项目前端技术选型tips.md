@@ -57,6 +57,6 @@ author: 小打
 4. 通过服务器端渲染、或以真实的 DOM 节点作为模板的方式使用 Vue，来满足 SEO 需求。
 5. Webpack / Browerify 构建项目架构，配合插件满足项目的性能及其它要求。
 
-### 注解
+## 注解
 
 [1] 参考知乎文章 [在 2016 年学 JavaScript 是一种什么样的体验？](https://zhuanlan.zhihu.com/p/22782487?utm_medium=social&utm_source=qq) 和知乎问题 [2017年学JavaScript是一种什么体验？](https://www.zhihu.com/question/68716213)
