@@ -125,7 +125,11 @@
                 <i class="fa fa-user-o"></i>
               </span>
               <span class="post-meta-item-text">{{ __('post.author') }} </span>
-              <span>{{ post.author }}</span>
+                {% if post.github %}
+                  <a href="https://github.com/{{ post.github }}" target="_blank">{{ post.author }}</a>
+                {% else %}
+                  <span>{{ post.author }}</span>
+                {% endif %}
             </span>
           {% endif %}
 

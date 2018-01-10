@@ -91,7 +91,11 @@ scheme: Mist
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-  GitHub: https://github.com/anchnet
+  安畅网络: https://github.com/anchnet
+  小打: https://github.com/xiaoda
+  剑走偏锋: https://github.com/liuzmeng
+  yuw: https://github.com/yuwyuw
+  wangtt: https://github.com/wangmuqi
 
 # Social Links Icons
 # Icon Mapping:
