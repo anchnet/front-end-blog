@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="ES6 在 2015 年正式发布，2016 年在 Babel 的支持下迅速成为前端开发的主流。ES6 使 JavaScript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，边学边用的方式可能更适合大部分同学，把新特性应用到项目里能直观地体会到好处。“ES6 最佳实践”系列就是想和大家聊一聊 ES6 究竟如何改变了我们的代码。">
+<meta name="description" content="ES6 在 2015 年正式发布，2016 年在 Babel 的支持下迅速成为前端开发的主流[1]。ES6 使 JavaScript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，边学边用的方式可能更适合大部分同学，把新特性应用到项目里能直观地体会到好处。“ES6 最佳实践”系列就是想和大家聊一聊 ES6 究竟如何改变了我们的代码。GoGo!">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6 最佳实践系列一：let 和 const">
-<meta property="og:url" content="http://frontend.anchnet.com/2017/ES6最佳实践系列一：let和const/index.html">
+<meta property="og:url" content="http://frontend.anchnet.com/2017/ES6-最佳实践系列一：let和const/index.html">
 <meta property="og:site_name" content="安畅前端博客">
-<meta property="og:description" content="ES6 在 2015 年正式发布，2016 年在 Babel 的支持下迅速成为前端开发的主流。ES6 使 JavaScript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，边学边用的方式可能更适合大部分同学，把新特性应用到项目里能直观地体会到好处。“ES6 最佳实践”系列就是想和大家聊一聊 ES6 究竟如何改变了我们的代码。">
+<meta property="og:description" content="ES6 在 2015 年正式发布，2016 年在 Babel 的支持下迅速成为前端开发的主流[1]。ES6 使 JavaScript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，边学边用的方式可能更适合大部分同学，把新特性应用到项目里能直观地体会到好处。“ES6 最佳实践”系列就是想和大家聊一聊 ES6 究竟如何改变了我们的代码。GoGo!">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-12T07:08:00.217Z">
+<meta property="og:updated_time" content="2018-01-13T16:20:02.782Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6 最佳实践系列一：let 和 const">
-<meta name="twitter:description" content="ES6 在 2015 年正式发布，2016 年在 Babel 的支持下迅速成为前端开发的主流。ES6 使 JavaScript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，边学边用的方式可能更适合大部分同学，把新特性应用到项目里能直观地体会到好处。“ES6 最佳实践”系列就是想和大家聊一聊 ES6 究竟如何改变了我们的代码。">
+<meta name="twitter:description" content="ES6 在 2015 年正式发布，2016 年在 Babel 的支持下迅速成为前端开发的主流[1]。ES6 使 JavaScript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，边学边用的方式可能更适合大部分同学，把新特性应用到项目里能直观地体会到好处。“ES6 最佳实践”系列就是想和大家聊一聊 ES6 究竟如何改变了我们的代码。GoGo!">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://frontend.anchnet.com/2017/ES6最佳实践系列一：let和const/"/>
+  <link rel="canonical" href="http://frontend.anchnet.com/2017/ES6-最佳实践系列一：let和const/"/>
 
 
 
@@ -256,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://frontend.anchnet.com/2017/ES6最佳实践系列一：let和const/">
+    <link itemprop="mainEntityOfPage" href="http://frontend.anchnet.com/2017/ES6-最佳实践系列一：let和const/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安畅前端小组">
@@ -337,9 +337,8 @@
       
 
       
-        <p>ES6 在 2015 年正式发布，2016 年在 Babel 的支持下迅速成为前端开发的主流。ES6 使 JavaScript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，边学边用的方式可能更适合大部分同学，把新特性应用到项目里能直观地体会到好处。“ES6 最佳实践”系列就是想和大家聊一聊 ES6 究竟如何改变了我们的代码。</p>
+        <p>ES6 在 2015 年正式发布，2016 年在 Babel 的支持下迅速成为前端开发的主流<sup>[1]</sup>。ES6 使 JavaScript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，边学边用的方式可能更适合大部分同学，把新特性应用到项目里能直观地体会到好处。“ES6 最佳实践”系列就是想和大家聊一聊 ES6 究竟如何改变了我们的代码。GoGo!</p>
 <a id="more"></a>
-<p>ES6 在 2015 年正式发布，2016 年在 Babel 的支持下迅速成为前端开发的主流<sup>[1]</sup>。ES6 使 JavaScript 这门语言变得更加正规、高级和高效。ES6 新特性非常多，边学边用的方式可能更适合大部分同学，把新特性应用到项目里能直观地体会到好处。“ES6 最佳实践”系列就是想和大家聊一聊 ES6 究竟如何改变了我们的代码。GoGo!</p>
 <h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>ES6 新增了 let 命令，用来声明变量，用法类似于 var。不同的是，let 声明的变量只在代码块内（一对大括号）有效，解决了变量作用域的问题；let 不允许在一个作用域内重复声明同一个变量，避免了变量的重复定义和覆盖。</p>
 <p>过去，我们需要用变量名称来区分不同物品的同一个属性；</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">10</span></div><div class="line">... <span class="comment">// 处理逻辑</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> num2 = <span class="number">20</span></div><div class="line">... <span class="comment">// 另一个处理逻辑</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(num) <span class="comment">// 20</span></div></pre></td></tr></table></figure>
@@ -468,7 +467,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
