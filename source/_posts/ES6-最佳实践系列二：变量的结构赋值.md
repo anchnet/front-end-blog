@@ -10,6 +10,8 @@ ES6 允许按照一定模式，从数组和对象中提取值，对变量进行�
 
 <!-- more -->
 
+### 赋值
+
 过去，我们需要逐个取出数组或对象中的值赋值给变量；
 
 ``` js
@@ -29,10 +31,12 @@ let [a, b] = [1, 2]
 let {c, z: d} = {c: 3, z: 4}
 ```
 
+### 默认值
+
 给变量指定默认值变得更加简单和清楚。
 
 ``` js
-// 过去的写法
+// 过去
 var a = arr[0] || 1
 var b = arr[1] || 2
 var c = obj.c || 3
@@ -40,15 +44,17 @@ var d = obj.z || 4
 ```
 
 ``` js
-// 现在的写法
+// 现在
 let [a = 1, b = 2] = arr
 let {c = 3, z: d = 4} = obj
 ```
 
+### 函数参数
+
 变量的解构赋值尤其适用于函数参数的定义。
 
 ``` js
-// 过去的写法
+// 过去
 function test (options) {
     var defaultOptions = {a: 1}
     options = Object.assign(defaultOptions, options)
@@ -56,12 +62,12 @@ function test (options) {
 ```
 
 ``` js
-// 现在的写法
+// 现在
 function test ({a = 1, b} = {}) {}
 ```
 
-其它用途：交换变量的值。
-*需要注意的是，在缺少 let 等赋值命令时，babel 编译会报错；node 和 chrome 可顺利执行。*
+### 用途：交换变量的值
+需要注意的是，在缺少 let 等赋值命令时，babel 编译会报错；node 和 chrome 可顺利执行。
 
 ``` js
 let a = 1
