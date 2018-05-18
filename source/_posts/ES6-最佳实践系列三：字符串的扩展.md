@@ -7,10 +7,11 @@ github: xiaoda
 ---
 
 ES6 加强了对 Unicode 的支持，并且扩展了字符串对象。
+主要特性：includes()、startWith()、endsWith()、repeat()、padStart()、padEnd()、模板字符串等（\`\`）。
 
 <!-- more -->
 
-### includes
+### includes()
 
 过去，我们只能通过 indexOf 方法判断一个字符串是否包含另一个字符串。返回值与 -1 做比较在语义化方面非常差。
 
@@ -26,7 +27,7 @@ if ('hello'.indexOf('l')) {} // 虽然符合直觉，但是不正确，出了问
 if ('hello'.includes('l')) {}
 ```
 
-### startsWith 和 endsWith
+### startsWith() 和 endsWith()
 
 startsWith 和 endsWith 方法分别从头部、尾部搜索字符串。
 
@@ -35,7 +36,7 @@ startsWith 和 endsWith 方法分别从头部、尾部搜索字符串。
 'hello'.endsWith('o')
 ```
 
-### repeat
+### repeat()
 
 过去，我们只能借助数组完成重复字符串的操作;
 
@@ -49,7 +50,7 @@ new Array(6).join('a') // 'aaaaa'
 'a'.repeat(5) // 'aaaaa'
 ```
 
-### padStart 和 padEnd
+### padStart() 和 padEnd()
 
 padStart 和 padEnd 方法分别从头部、尾部补全字符串。
 

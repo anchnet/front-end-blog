@@ -58,16 +58,19 @@ let {c = 3, z: d = 4} = obj
 function test (options) {
     var defaultOptions = {a: 1}
     options = Object.assign(defaultOptions, options)
+
+    console.log(options.a)
 }
 ```
 
 ``` js
 // 现在
-function test ({a = 1, b} = {}) {}
+function test ({a = 1, b} = {}) {
+    console.log(a)
+}
 ```
 
 ### 用途：交换变量的值
-需要注意的是，在缺少 let 等赋值命令时，babel 编译会报错；node 和 chrome 可顺利执行。
 
 ``` js
 let a = 1
