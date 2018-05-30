@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ES6,最佳实践,解构赋值," />
+  <meta name="keywords" content="ES6,最佳实践,函数," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。">
-<meta name="keywords" content="ES6,最佳实践,解构赋值">
+<meta name="description" content="ES6 扩展了函数。主要特性：函数参数的默认值、rest 参数、箭头函数">
+<meta name="keywords" content="ES6,最佳实践,函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6 最佳实践系列二：变量的解构赋值">
-<meta property="og:url" content="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的解构赋值/index.html">
+<meta property="og:title" content="ES6 最佳实践系列五：函数的扩展">
+<meta property="og:url" content="http://frontend.anchnet.com/2018/ES6-最佳实践系列五：函数的扩展/index.html">
 <meta property="og:site_name" content="安畅前端博客">
-<meta property="og:description" content="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。">
+<meta property="og:description" content="ES6 扩展了函数。主要特性：函数参数的默认值、rest 参数、箭头函数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-30T06:44:26.000Z">
+<meta property="og:updated_time" content="2018-05-30T09:12:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6 最佳实践系列二：变量的解构赋值">
-<meta name="twitter:description" content="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。">
+<meta name="twitter:title" content="ES6 最佳实践系列五：函数的扩展">
+<meta name="twitter:description" content="ES6 扩展了函数。主要特性：函数参数的默认值、rest 参数、箭头函数">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的解构赋值/"/>
+  <link rel="canonical" href="http://frontend.anchnet.com/2018/ES6-最佳实践系列五：函数的扩展/"/>
 
 
 
 
 
-  <title>ES6 最佳实践系列二：变量的解构赋值 | 安畅前端博客</title>
+  <title>ES6 最佳实践系列五：函数的扩展 | 安畅前端博客</title>
   
 
 
@@ -257,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的解构赋值/">
+    <link itemprop="mainEntityOfPage" href="http://frontend.anchnet.com/2018/ES6-最佳实践系列五：函数的扩展/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安畅前端小组">
@@ -274,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6 最佳实践系列二：变量的解构赋值</h1>
+          <h1 class="post-title" itemprop="name headline">ES6 最佳实践系列五：函数的扩展</h1>
         
 
         <div class="post-meta">
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-14T00:00:49+08:00">
-                2018-01-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T15:24:32+08:00">
+                2018-05-30
               </time>
             
 
@@ -338,19 +338,23 @@
       
 
       
-        <p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。</p>
+        <p>ES6 扩展了函数。<br>主要特性：函数参数的默认值、rest 参数、箭头函数</p>
 <a id="more"></a>
-<h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><p>过去，我们需要逐个取出数组或对象中的值赋值给变量；</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">c</span>: <span class="number">3</span>, <span class="attr">z</span>: <span class="number">4</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = arr[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">var</span> b = arr[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">var</span> c = obj.c</span><br><span class="line"><span class="keyword">var</span> d = obj.z</span><br></pre></td></tr></table></figure>
-<p>现在，可以一次将数组或对象中的值赋值给多个变量。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b] = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">let</span> &#123;c, <span class="attr">z</span>: d&#125; = &#123;<span class="attr">c</span>: <span class="number">3</span>, <span class="attr">z</span>: <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><p>给变量指定默认值变得更加简单和清楚。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 过去</span></span><br><span class="line"><span class="keyword">var</span> a = arr[<span class="number">0</span>] || <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b = arr[<span class="number">1</span>] || <span class="number">2</span></span><br><span class="line"><span class="keyword">var</span> c = obj.c || <span class="number">3</span></span><br><span class="line"><span class="keyword">var</span> d = obj.z || <span class="number">4</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 现在</span></span><br><span class="line"><span class="keyword">let</span> [a = <span class="number">1</span>, b = <span class="number">2</span>] = arr</span><br><span class="line"><span class="keyword">let</span> &#123;c = <span class="number">3</span>, <span class="attr">z</span>: d = <span class="number">4</span>&#125; = obj</span><br></pre></td></tr></table></figure>
-<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><p>变量的解构赋值尤其适用于函数参数的定义。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 过去</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> defaultOptions = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;</span><br><span class="line">    options = <span class="built_in">Object</span>.assign(defaultOptions, options)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(options.a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 现在</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params">&#123;a = <span class="number">1</span>, b&#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="用途：交换变量的值"><a href="#用途：交换变量的值" class="headerlink" title="用途：交换变量的值"></a>用途：交换变量的值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">[a, b] = [b, a]</span><br></pre></td></tr></table></figure>
+<h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><p>过去，我们只能在函数体中设定参数的默认值；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> x === <span class="literal">undefined</span>) x = <span class="string">'Hello'</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> y === <span class="literal">undefined</span>) y = <span class="string">'World'</span></span><br><span class="line">  <span class="built_in">console</span>.log(x, y)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在，参数定义时就可以设定默认值，清晰明确，去掉参数时也不用担心函数运行报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span> (<span class="params">x = <span class="string">'Hello'</span>, y = <span class="string">'World'</span></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x, y)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="rest-参数"><a href="#rest-参数" class="headerlink" title="rest 参数"></a>rest 参数</h3><p>过去，在函数内，我们用 arguments 对象（类数组对象）获取所有参数；现在可使用 rest 参数（数组）获取多余参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params">x, ...values</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x, values)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) <span class="comment">// 1 [2, 3]</span></span><br></pre></td></tr></table></figure>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>ES6 允许使用箭头定义函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> f = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> f = <span class="function"><span class="params">x</span> =&gt;</span> x</span><br><span class="line"><span class="keyword">let</span> f = <span class="function">(<span class="params">x, y</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意点：</p>
+<ul>
+<li>函数体内的 this 对象，是定义时所在的对象，而不是使用时所在的对象。</li>
+<li>不可以当作构造函数（不可以使用 new 命令），否则会抛出一个错误。</li>
+<li>不可以使用 arguments 对象，该对象在函数体内不存在。可使用 rest 参数代替。</li>
+<li>不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。</li>
+</ul>
 
       
     </div>
@@ -372,7 +376,7 @@
           
             <a href="/tags/最佳实践/" rel="tag"># 最佳实践</a>
           
-            <a href="/tags/解构赋值/" rel="tag"># 解构赋值</a>
+            <a href="/tags/函数/" rel="tag"># 函数</a>
           
         </div>
       
@@ -385,8 +389,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/新项目前端技术选型tips/" rel="next" title="新项目前端技术选型 tips">
-                <i class="fa fa-chevron-left"></i> 新项目前端技术选型 tips
+              <a href="/2018/前端模块化和组件化/" rel="next" title="前端模块化和组件化">
+                <i class="fa fa-chevron-left"></i> 前端模块化和组件化
               </a>
             
           </div>
@@ -394,10 +398,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/ES6-最佳实践系列三：字符串的扩展/" rel="prev" title="ES6 最佳实践系列三：字符串的扩展">
-                ES6 最佳实践系列三：字符串的扩展 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -579,7 +579,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#赋值"><span class="nav-number">1.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认值"><span class="nav-number">2.</span> <span class="nav-text">默认值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数"><span class="nav-number">3.</span> <span class="nav-text">函数参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用途：交换变量的值"><span class="nav-number">4.</span> <span class="nav-text">用途：交换变量的值</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数的默认值"><span class="nav-number">1.</span> <span class="nav-text">函数参数的默认值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rest-参数"><span class="nav-number">2.</span> <span class="nav-text">rest 参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">3.</span> <span class="nav-text">箭头函数</span></a></li></ol></div>
             
 
           </div>
