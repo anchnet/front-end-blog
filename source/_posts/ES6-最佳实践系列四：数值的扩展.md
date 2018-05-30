@@ -2,6 +2,9 @@
 title: ES6 最佳实践系列四：数值的扩展
 date: 2018-05-18 15:04:10
 tags:
+- ES6
+- 最佳实践
+- 数值
 author: 小打
 github: xiaoda
 ---

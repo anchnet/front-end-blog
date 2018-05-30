@@ -2,6 +2,10 @@
 title: ES6 最佳实践系列一：let 和 const
 date: 2017-10-15 19:03:12
 tags:
+- ES6
+- 最佳实践
+- 变量
+- 常量
 author: 小打
 github: xiaoda
 ---

@@ -2,6 +2,8 @@
 title: 新项目前端技术选型 tips
 date: 2017-11-30 11:22:24
 tags:
+- 新项目
+- 选型
 author: 小打
 github: xiaoda
 ---
