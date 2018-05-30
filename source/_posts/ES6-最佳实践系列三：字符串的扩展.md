@@ -2,6 +2,9 @@
 title: ES6 最佳实践系列三：字符串的扩展
 date: 2018-05-02 16:22:54
 tags:
+- ES6
+- 最佳实践
+- 字符串
 author: 小打
 github: xiaoda
 ---

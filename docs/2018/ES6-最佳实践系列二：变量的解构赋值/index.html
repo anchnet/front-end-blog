@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ES6,最佳实践,解构赋值," />
 
 
 
@@ -95,13 +95,14 @@
 
 
 <meta name="description" content="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。">
+<meta name="keywords" content="ES6,最佳实践,解构赋值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6 最佳实践系列二：变量的解构赋值">
-<meta property="og:url" content="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的结构赋值/index.html">
+<meta property="og:url" content="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的解构赋值/index.html">
 <meta property="og:site_name" content="安畅前端博客">
 <meta property="og:description" content="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T02:27:07.000Z">
+<meta property="og:updated_time" content="2018-05-30T06:44:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6 最佳实践系列二：变量的解构赋值">
 <meta name="twitter:description" content="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。">
@@ -133,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的结构赋值/"/>
+  <link rel="canonical" href="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的解构赋值/"/>
 
 
 
@@ -256,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的结构赋值/">
+    <link itemprop="mainEntityOfPage" href="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的解构赋值/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安畅前端小组">
@@ -350,6 +351,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 过去</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> defaultOptions = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;</span><br><span class="line">    options = <span class="built_in">Object</span>.assign(defaultOptions, options)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(options.a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 现在</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params">&#123;a = <span class="number">1</span>, b&#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="用途：交换变量的值"><a href="#用途：交换变量的值" class="headerlink" title="用途：交换变量的值"></a>用途：交换变量的值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">[a, b] = [b, a]</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -363,6 +365,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
+            <a href="/tags/最佳实践/" rel="tag"># 最佳实践</a>
+          
+            <a href="/tags/解构赋值/" rel="tag"># 解构赋值</a>
+          
+        </div>
       
 
       
@@ -470,6 +482,15 @@
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>

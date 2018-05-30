@@ -2,6 +2,9 @@
 title: ES6 最佳实践系列二：变量的解构赋值
 date: 2018-01-14 00:00:49
 tags:
+- ES6
+- 最佳实践
+- 解构赋值
 author: 小打
 github: xiaoda
 ---
