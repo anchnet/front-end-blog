@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。">
+<meta name="description" content="前端本是一个把设计稿变成网页的简单工作，随着浏览器和 JS 引擎的能力越来越强、需求的纷繁复杂、前后端技术的更快发展，今天的前端工作已经变得前所未有的复杂。作为前端工程师，不能局限于眼前的页面，而是要把前端的工作当作工程来管理、开发和维护。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6 最佳实践系列二：变量的解构赋值">
-<meta property="og:url" content="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的结构赋值/index.html">
+<meta property="og:title" content="前端模块化和组件化">
+<meta property="og:url" content="http://frontend.anchnet.com/2018/前端模块化和组件化/index.html">
 <meta property="og:site_name" content="安畅前端博客">
-<meta property="og:description" content="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。">
+<meta property="og:description" content="前端本是一个把设计稿变成网页的简单工作，随着浏览器和 JS 引擎的能力越来越强、需求的纷繁复杂、前后端技术的更快发展，今天的前端工作已经变得前所未有的复杂。作为前端工程师，不能局限于眼前的页面，而是要把前端的工作当作工程来管理、开发和维护。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T02:27:07.000Z">
+<meta property="og:updated_time" content="2018-05-30T06:36:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6 最佳实践系列二：变量的解构赋值">
-<meta name="twitter:description" content="ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。">
+<meta name="twitter:title" content="前端模块化和组件化">
+<meta name="twitter:description" content="前端本是一个把设计稿变成网页的简单工作，随着浏览器和 JS 引擎的能力越来越强、需求的纷繁复杂、前后端技术的更快发展，今天的前端工作已经变得前所未有的复杂。作为前端工程师，不能局限于眼前的页面，而是要把前端的工作当作工程来管理、开发和维护。">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的结构赋值/"/>
+  <link rel="canonical" href="http://frontend.anchnet.com/2018/前端模块化和组件化/"/>
 
 
 
 
 
-  <title>ES6 最佳实践系列二：变量的解构赋值 | 安畅前端博客</title>
+  <title>前端模块化和组件化 | 安畅前端博客</title>
   
 
 
@@ -256,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://frontend.anchnet.com/2018/ES6-最佳实践系列二：变量的结构赋值/">
+    <link itemprop="mainEntityOfPage" href="http://frontend.anchnet.com/2018/前端模块化和组件化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="安畅前端小组">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6 最佳实践系列二：变量的解构赋值</h1>
+          <h1 class="post-title" itemprop="name headline">前端模块化和组件化</h1>
         
 
         <div class="post-meta">
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-14T00:00:49+08:00">
-                2018-01-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T10:30:13+08:00">
+                2018-05-30
               </time>
             
 
@@ -337,19 +337,13 @@
       
 
       
-        <p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。</p>
+        <p>前端本是一个把设计稿变成网页的简单工作，随着浏览器和 JS 引擎的能力越来越强、需求的纷繁复杂、前后端技术的更快发展，今天的前端工作已经变得前所未有的复杂。作为前端工程师，不能局限于眼前的页面，而是要把前端的工作当作工程来管理、开发和维护。</p>
 <a id="more"></a>
-<h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><p>过去，我们需要逐个取出数组或对象中的值赋值给变量；</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">c</span>: <span class="number">3</span>, <span class="attr">z</span>: <span class="number">4</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = arr[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">var</span> b = arr[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">var</span> c = obj.c</span><br><span class="line"><span class="keyword">var</span> d = obj.z</span><br></pre></td></tr></table></figure>
-<p>现在，可以一次将数组或对象中的值赋值给多个变量。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b] = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">let</span> &#123;c, <span class="attr">z</span>: d&#125; = &#123;<span class="attr">c</span>: <span class="number">3</span>, <span class="attr">z</span>: <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><p>给变量指定默认值变得更加简单和清楚。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 过去</span></span><br><span class="line"><span class="keyword">var</span> a = arr[<span class="number">0</span>] || <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b = arr[<span class="number">1</span>] || <span class="number">2</span></span><br><span class="line"><span class="keyword">var</span> c = obj.c || <span class="number">3</span></span><br><span class="line"><span class="keyword">var</span> d = obj.z || <span class="number">4</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 现在</span></span><br><span class="line"><span class="keyword">let</span> [a = <span class="number">1</span>, b = <span class="number">2</span>] = arr</span><br><span class="line"><span class="keyword">let</span> &#123;c = <span class="number">3</span>, <span class="attr">z</span>: d = <span class="number">4</span>&#125; = obj</span><br></pre></td></tr></table></figure>
-<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><p>变量的解构赋值尤其适用于函数参数的定义。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 过去</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> defaultOptions = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;</span><br><span class="line">    options = <span class="built_in">Object</span>.assign(defaultOptions, options)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(options.a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 现在</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params">&#123;a = <span class="number">1</span>, b&#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="用途：交换变量的值"><a href="#用途：交换变量的值" class="headerlink" title="用途：交换变量的值"></a>用途：交换变量的值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">[a, b] = [b, a]</span><br></pre></td></tr></table></figure>
+<h3 id="组件库"><a href="#组件库" class="headerlink" title="组件库"></a>组件库</h3><p>公司站点一般分为两类：面向用户的展示型网站和面向内部或用户的功能型后台。其中，功能型后台以功能实现、流程跑通为主，样式和交互往往是可以与公司的其它后台共用的。这么做的好处显而易见：当一套前端样式和交互成熟之后，后台的前端开发成本降低、效率提高、问题减少。</p>
+<p><a href="https://github.com/anchnet/anchor-ui" target="_blank" rel="noopener">Anchor-UI</a> 就是一个这样的组件库。我们以 Bootstrap 3.x 作为基础，通过修改 Sass 颜色、尺寸变量自定义主题风格；补充后台需要但 Bootstrap 没有提供的样式、交互、图标；开发项目业务相关的复杂插件。目前该组件库已投入多个项目使用，为不同的项目提供了统一的、稳定的前端样式风格和功能交互。</p>
+<h3 id="基础库"><a href="#基础库" class="headerlink" title="基础库"></a>基础库</h3><p>规模稍大的前端项目大多会有 helper.js（或 util.js），存放原生 JS 没有提供的操作方法和业务相关的帮助函数。其中，操作方法往往是各项目都需要的，然而各自的实现却都有些不同，新项目又需要重新复制一份。这样非常不利于统一和维护，通用的基础库显得非常必要。</p>
+<p><a href="https://github.com/xiaoda/xdhelper" target="_blank" rel="noopener">xdhelper</a> 是一个 JS 帮助函数库，提供了原生 JS 没有提供的常用操作方法。目前已有多个前端项目引入该库并使用，后续会根据实际使用情况持续优化。</p>
+
       
     </div>
     
@@ -373,8 +367,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/新项目前端技术选型tips/" rel="next" title="新项目前端技术选型 tips">
-                <i class="fa fa-chevron-left"></i> 新项目前端技术选型 tips
+              <a href="/2018/ES6-最佳实践系列四：数值的扩展/" rel="next" title="ES6 最佳实践系列四：数值的扩展">
+                <i class="fa fa-chevron-left"></i> ES6 最佳实践系列四：数值的扩展
               </a>
             
           </div>
@@ -382,10 +376,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/ES6-最佳实践系列三：字符串的扩展/" rel="prev" title="ES6 最佳实践系列三：字符串的扩展">
-                ES6 最佳实践系列三：字符串的扩展 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#赋值"><span class="nav-number">1.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认值"><span class="nav-number">2.</span> <span class="nav-text">默认值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数"><span class="nav-number">3.</span> <span class="nav-text">函数参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用途：交换变量的值"><span class="nav-number">4.</span> <span class="nav-text">用途：交换变量的值</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件库"><span class="nav-number">1.</span> <span class="nav-text">组件库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础库"><span class="nav-number">2.</span> <span class="nav-text">基础库</span></a></li></ol></div>
             
 
           </div>
