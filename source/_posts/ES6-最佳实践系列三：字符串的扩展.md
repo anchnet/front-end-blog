@@ -20,7 +20,6 @@ ES6 加强了对 Unicode 的支持，并且扩展了字符串对象。
 
 ``` js
 if ('hello'.indexOf('l') > -1) {}
-
 if ('hello'.indexOf('l')) {} // 虽然符合直觉，但是不正确，出了问题很难发现。GG
 ```
 
